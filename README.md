@@ -171,3 +171,8 @@ class SampleAPI {
 module.exports = new SampleAPI();
 
 ```
+
+## Mock
+
++ ``/api/v1/sample/index.js`  <-> `/api/v1/sample/__mocks__/index.js`
++ `/api/v1/sample.js`  <-> `/api/v1/__mocks__/sample.js`
