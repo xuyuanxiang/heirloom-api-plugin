@@ -45,22 +45,43 @@ server.apply(new HeirloomAPIPlugin());
 server.start();
 ```
 
-编写`example/api/sample.js`文件，实现第一个API：
+编写`example/api/sample.js`文件，实现用于**生产环境**的API：
 
 ```javascript
 // GET请求
 exports.get = function (ctx) {
-    ctx.body = 'sample';
+    ctx.body = 'production';
 };
 ```
 
+编写`example/api/__mocks__/sample.js`文件，Mock接口：
+
+```javascript
+// GET请求
+exports.get = function (ctx) {
+    ctx.body = 'staging';
+};
+```
 
 在`example/`目录，执行以下命令启动服务：
 ```npm
 node .
 ```
 
-访问: `http://localhost:4000/api/sample`。
+访问：
+```bash
+curl http://localhost:4000/api/sample # staging
+```
+
+结束之前启动的进程，加上环境变量`NODE_ENV`再次启动服务：
+```npm
+NODE_ENV=production node .
+```
+
+访问：
+```bash
+curl http://localhost:4000/api/sample # production
+```
 
 ## 类型定义
 
