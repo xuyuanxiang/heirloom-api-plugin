@@ -1,1 +1,1 @@
-export APIPlugin from './HeirloomAPIPlugin';
+export HeirloomAPIPlugin from './HeirloomAPIPlugin';
