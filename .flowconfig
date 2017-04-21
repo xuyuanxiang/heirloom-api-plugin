@@ -1,0 +1,15 @@
+[ignore]
+; Ignore Jest directory
+.*/__tests__/.*
+.*/__mocks__/.*
+
+; Ignore target directory
+<PROJECT_ROOT>/lib/.*
+
+[include]
+
+[libs]
+flow-typed/
+
+[options]
+module.use_strict=true

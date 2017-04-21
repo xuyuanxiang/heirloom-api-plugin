@@ -1,0 +1,57 @@
+{
+  "name": "heirloom-api-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "xuyuanxiang <chaos@xuyuanxiang.cn> (http://xuyuanxiang.me)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=7.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuyuanxiang/heirloom-api-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xuyuanxiang/heirloom-api-plugin/issues"
+  },
+  "homepage": "https://github.com/xuyuanxiang/heirloom-api-plugin",
+  "scripts": {
+    "clean": "rimraf lib",
+    "prebuild": "npm run lint && npm run flow && npm run clean",
+    "build": "babel src --out-dir lib",
+    "prerelease": "npm run build",
+    "release": "npm publish --registry https://registry.npmjs.org/",
+    "lint": "eslint .",
+    "flow": "node_modules/.bin/flow",
+    "prelink": "npm run build"
+  },
+  "pre-commit": [
+    "lint",
+    "flow",
+    "build"
+  ],
+  "dependencies": {
+    "debug": "^2.6.4",
+    "koa-router": "^7.1.1"
+  },
+  "peerDependencies": {
+    "heirloom-core": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.1.1",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-stage-1": "^6.24.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.9.0",
+    "flow-bin": "^0.44.2",
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.5.4"
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "ignore": "node_modules",
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "node": 7.6
+                }
+            }
+        ],
+        "flow",
+        "es2017",
+        "stage-1"
+    ]
+}
