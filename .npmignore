@@ -100,3 +100,4 @@ src
 flow-typed/npm
 .babelrc
 sample
+.travis.yml
