@@ -1,6 +1,6 @@
 {
   "name": "heirloom-api-plugin",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.cn> (http://xuyuanxiang.me)",
   "license": "MIT",
