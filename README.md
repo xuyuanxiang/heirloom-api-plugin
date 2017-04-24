@@ -28,7 +28,7 @@ mkdir example && cd example && npm init
 进入`example/`目录，执行以下命令安装依赖：
 
 ```npm
-SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install heirloom-core heirloom-api-plugin --save
+npm install heirloom-core heirloom-api-plugin --save
 ```
 
 编写`example/index.js`:
@@ -72,7 +72,7 @@ exports.get = function (ctx) {
 node .
 ```
 
-访问：
+另起一个终端访问：
 ```bash
 curl http://localhost:4000/api/sample # staging
 ```
@@ -82,14 +82,14 @@ curl http://localhost:4000/api/sample # staging
 NODE_ENV=production node .
 ```
 
-访问：
+另起一个终端访问：
 ```bash
 curl http://localhost:4000/api/sample # production
 ```
 
 ## 类型定义
 
-```typescript
+```javascript
 // HTTP Methods
 declare type Heirloom$AllowedMethod = $Enum<{ get: string, post: string, update: string, patch: string, delete: string, put: string }>;
 
@@ -123,7 +123,7 @@ exports.post = function (ctx) {
 };
 
 // PATCH api/sample
-exports.put = function (ctx) {
+exports.patch = function (ctx) {
     ctx.body = 'patch';
 };
 
@@ -177,6 +177,7 @@ module.exports = new SampleAPI();
 ```
 
 ## Mock
-
-+ ``/api/v1/sample/index.js`  <-> `/api/v1/sample/__mocks__/index.js`
-+ `/api/v1/sample.js`  <-> `/api/v1/__mocks__/sample.js`
+|正式环境|Mock| 请求|
+|:------|:----|
+|`/api/v1/sample/index.js`|`/api/v1/sample/__mocks__/index.js`|`http://domain.com/api/v1/sample`|
+|`/api/v1/sample.js` | `/api/v1/__mocks__/sample.js` | `http://domain.com/api/v1/sample`|
