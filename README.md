@@ -74,7 +74,7 @@ node .
 
 另起一个终端访问：
 ```bash
-curl http://localhost:4000/api/sample # staging
+curl http://localhost:4000/api/sample # 返回：staging
 ```
 
 结束之前启动的进程，加上环境变量`NODE_ENV`再次启动服务：
@@ -84,7 +84,7 @@ NODE_ENV=production node .
 
 另起一个终端访问：
 ```bash
-curl http://localhost:4000/api/sample # production
+curl http://localhost:4000/api/sample # 返回：production
 ```
 
 ## 类型定义
@@ -177,7 +177,8 @@ module.exports = new SampleAPI();
 ```
 
 ## Mock
-|正式环境|Mock| 请求|
-|:------|:----|
-|`/api/v1/sample/index.js`|`/api/v1/sample/__mocks__/index.js`|`http://domain.com/api/v1/sample`|
-|`/api/v1/sample.js` | `/api/v1/__mocks__/sample.js` | `http://domain.com/api/v1/sample`|
+
+正式环境 | Mock | 请求 |
+--------|------|-----
+`/api/v1/sample/index.js`|`/api/v1/sample/__mocks__/index.js`|`http://domain.com/api/v1/sample`|
+`/api/v1/sample.js` | `/api/v1/__mocks__/sample.js` | `http://domain.com/api/v1/sample`|
