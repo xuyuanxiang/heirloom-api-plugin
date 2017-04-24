@@ -1,6 +1,6 @@
 {
   "name": "heirloom-api-plugin",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "index.js",
   "author": "xuyuanxiang <chaos@xuyuanxiang.cn> (http://xuyuanxiang.me)",
   "license": "MIT",
@@ -19,11 +19,8 @@
     "clean": "rimraf lib",
     "prebuild": "npm run clean",
     "build": "babel src --out-dir lib",
-    "prerelease": "npm run build",
-    "release": "npm publish --registry https://registry.npmjs.org/",
     "lint": "eslint .",
-    "flow": "node_modules/.bin/flow",
-    "prelink": "npm run build"
+    "flow": "node_modules/.bin/flow"
   },
   "pre-commit": [
     "lint",
