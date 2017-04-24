@@ -79,8 +79,8 @@ export default class HeirloomAPIPlugin {
         if (this.sourceFiles && this.sourceFiles.length) {
             this.sourceFiles.forEach((it: string) => {
                 let file = it;
+                const { dir, base, name } = path.parse(it);
                 if (this.mock) {
-                    const { dir, base } = path.parse(it);
                     const mockFile = path.join(dir, MOCKS, base);
                     if (fs.existsSync(mockFile) && fs.statSync(mockFile).isFile()) {
                         file = mockFile;
@@ -91,8 +91,12 @@ export default class HeirloomAPIPlugin {
                 const module: Heirloom$API = require(file);// eslint-disable-line
                 const route: string = path.join(this.apiRoot, path.relative(this.scanDirectory, it))
                     .replace(/\\/g, '/')
-                    .replace(/(index)?\.js$/, '');
-                this.dispatch(route, module);
+                    .replace(/\.js$/, '');
+                if (name === 'index') {
+                    this.dispatch(route.replace('/index', ''), module);
+                } else {
+                    this.dispatch(route, module);
+                }
                 debug('analyzed:', file);
             });
         }
