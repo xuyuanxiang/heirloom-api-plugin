@@ -2,7 +2,7 @@
 
 [![NPM Downloads](https://img.shields.io/npm/dm/heirloom-api-plugin.svg?style=flat)](https://npmjs.org/package/heirloom-api-plugin)
 [![Node.js Version](https://img.shields.io/node/v/heirloom-api-plugin.svg?style=flat)](http://nodejs.org/download/)
-[![Build Status](https://img.shields.io/travis/xuyuanxiang/heirloom-api-plugin/master.svg?style=flat-square)](https://travis-ci.org/xuyuanxiang/heirloom-api-plugin)
+[![Build Status](https://travis-ci.org/xuyuanxiang/heirloom-api-plugin.svg?style=flat-square)](https://travis-ci.org/xuyuanxiang/heirloom-api-plugin)
 
 基于heirloom-core[Plugin](https://github.com/xuyuanxiang/heirloom-core#plugin)接口，对[koa-router^7.1.1](https://github.com/koajs/static#readme)的封装实现。
 
